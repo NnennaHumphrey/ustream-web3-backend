@@ -1,0 +1,71 @@
+spring:
+  application:
+    name: ustreamweb3-backend
+
+  docker:
+    compose:
+      enabled: false
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://dpg-ctdrusdds78s739elm40-a.oregon-postgres.render.com:5432/ustreamweb3_71cc
+    username: ustreamweb3_users
+    password: uuKhMUYHPZKzhkwdSLp8DGAYBjvFWEVm
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        transaction:
+          jta:
+            platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
+    hibernate:
+      ddl-auto: update
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ustreamweb3@gmail.com
+    password: jsaqwherffwirwwn
+    properties:
+      mail:
+        debug: true
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: smtp.gmail.com
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+  main:
+    banner-mode: off
+
+# Server configuration
+server:
+  port: 8070
+
+# JWT configuration
+jwt:
+  secret: my-very-strong-secret-key-at-least-32-bytes-long
+  expirationMs: 86400000
+  private-key: classpath:jwt/app.key
+  public-key: classpath:jwt/app.pub
+  ttl: 15m
+
+# Cloudinary configuration
+cloudinary:
+  cloud_name: dck13mc1p
+  api_key: 825895683314121
+  api_secret: CaLBM9aeJKiDaFyiDblYh42jgLg
+
+# Logging configuration
+logging:
+  level:
+    org.springframework.web: INFO
+    com.ustreamweb3_backend: INFO
+    root: WARN
