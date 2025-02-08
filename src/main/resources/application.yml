@@ -6,11 +6,13 @@ spring:
     compose:
       enabled: false
 
+
+
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://dpg-ctdrusdds78s739elm40-a.oregon-postgres.render.com:5432/ustreamweb3_71cc
-    username: ustreamweb3_users
-    password: uuKhMUYHPZKzhkwdSLp8DGAYBjvFWEVm
+    url: jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:5432/postgres
+    username: postgres.notnehjlhvwzulangrwp
+    password: wNGrXKCJdJvbaF0o
 
   jpa:
     show-sql: false
@@ -69,3 +71,14 @@ logging:
     org.springframework.web: INFO
     com.ustreamweb3_backend: INFO
     root: WARN
+
+# Springdoc OpenAPI Configuration
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+

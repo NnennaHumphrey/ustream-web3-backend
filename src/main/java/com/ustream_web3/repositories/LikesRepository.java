@@ -11,7 +11,6 @@ public interface LikesRepository extends JpaRepository<Likes, UUID> {
 
     List<Likes> findByVideoId(UUID videoId);
 
-
     Likes findByUserIdAndVideoId(UUID userId, UUID videoId);
 
     Optional<Likes> findByVideoIdAndUserId(UUID videoId, UUID id);

@@ -18,6 +18,8 @@ public class LeaderboardDTO {
     private int score;
 
     private String profilePictureUrl;
+
+
 }
 
 

@@ -43,6 +43,13 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+
+                        // Swagger configuration
+                        .requestMatchers("/swagger-ui/**").permitAll()  // Allow swagger-ui resources
+                        .requestMatchers("/v3/api-docs/**").permitAll() // Allow OpenAPI docs access
+                        .requestMatchers("/swagger-ui/index.html").permitAll()
+                        .requestMatchers("/swagger-ui.html").permitAll()
+
                         .requestMatchers(HttpMethod.POST, "/api/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/auth/login/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/email/verify-otp/**").permitAll()
